@@ -8,10 +8,10 @@ socketio = SocketIO(app, cors_allowed_origins="*")  # Habilitamos WebSockets con
 def handle_connect():
     print("Cliente conectado")
 
-@socketio.on("pedido")
+@socketio.on("bus")
 def handle_message(data):
-    print(f"Pedido recibido: {data}")
-    emit("pedido_actualizado", f"Nuevo pedido: {data}", broadcast=True)  # Enviamos a todos los clientes
+    print(f"Bus recibido: {data}")
+    emit("bus_actualizado", f"Nuevo bus: {data}", broadcast=True)  # Enviamos a todos los clientes
 
 if __name__ == "__main__":
     socketio.run(app, debug=True)  # Ejecutamos la aplicación con WebSockets
