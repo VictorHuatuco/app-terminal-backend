@@ -11,7 +11,7 @@ def handle_connect():
 @socketio.on("bus")
 def handle_message(data):
     print(f"Bus recibido: {data}")
-    emit("bus_actualizado", f"Nuevo bus: {data}", broadcast=True)  # Enviamos a todos los clientes
+    emit("bus_actualizado", data, broadcast=True)  # Enviamos a todos los clientes
 
 if __name__ == "__main__":
     socketio.run(app, debug=True)  # Ejecutamos la aplicación con WebSockets

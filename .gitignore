@@ -30,3 +30,7 @@ pip-delete-this-directory.txt
 
 # Configuración de Jupyter Notebook
 .ipynb_checkpoints/
+
+
+# Ignorar videos
+videos/
