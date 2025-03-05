@@ -4,7 +4,7 @@ from datetime import datetime
 from flask import Flask
 from flask_socketio import SocketIO, emit
 
-# Obtener la IP local automáticamente
+# Obtener la IP local automáticamenteeeeeeeee
 hostname = socket.gethostname()
 local_ip = socket.gethostbyname(hostname)
 
