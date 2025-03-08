@@ -27,6 +27,7 @@ pip-delete-this-directory.txt
 # Archivos de bases de datos temporales
 *.sqlite3
 *.db
+!bdterminalpv.db
 
 # Configuración de Jupyter Notebook
 .ipynb_checkpoints/
