@@ -1,17 +1,24 @@
 # 🚍 App Terminal Backend
-Este proyecto es una API backend para la gestión de terminales de buses, desarrollada con FastAPI, PostgreSQL y SQLAlchemy.
 
-📌 Requisitos previos
+Este proyecto es una API backend para la gestión de terminales de buses, desarrollada con **FastAPI**, **PostgreSQL** y **SQLAlchemy**.
+
+---
+
+## 📌 Requisitos previos
+
 Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
-Python 3.8+
-PostgreSQL
-Git
-📥 Instalación
-1️⃣ Clonar el repositorio
-bash
-Copiar
-Editar
+- [Python 3.8+](https://www.python.org/downloads/)
+- [PostgreSQL](https://www.postgresql.org/download/)
+- [Git](https://git-scm.com/downloads)
+
+---
+
+## 📥 Instalación
+
+### 1️⃣ Clonar el repositorio
+
+```bash
 git clone https://github.com/VictorHuatuco/app-terminal-backend.git
 cd app-terminal-backend
 2️⃣ Crear y activar entorno virtual
