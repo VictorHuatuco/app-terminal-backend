@@ -1,0 +1,53 @@
+# app/routes/travels.py
+
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+from app.database import get_db
+from app.models import Travels
+from app.schemas import TravelCreate
+
+router = APIRouter(
+    prefix="/travels",
+    tags=["Travels"]
+)
+
+# Obtener todos los viajes
+@router.get("/")
+def get_travels(db: Session = Depends(get_db)):
+    travels = db.query(Travels).all()
+    return travels
+
+# Obtener un viaje por ID
+@router.get("/{travel_id}")
+def get_travel(travel_id: int, db: Session = Depends(get_db)):
+    travel = db.query(Travels).filter(Travels.id == travel_id).first()
+    if not travel:
+        raise HTTPException(status_code=404, detail="Viaje no encontrado")
+    return travel
+
+# Crear un nuevo viaje
+@router.post("/")
+def create_travel(travel_data: TravelCreate, db: Session = Depends(get_db)):
+    new_travel = Travels(
+        id_bus_companies=travel_data.id_bus_companies,
+        id_destinations=travel_data.id_destinations,
+        departure_time=travel_data.departure_time,
+        plate=travel_data.plate
+    )
+    
+    db.add(new_travel)
+    db.commit()
+    db.refresh(new_travel)
+    
+    return {"message": "Viaje creado", "travel": new_travel}
+
+# Eliminar un viaje
+@router.delete("/{travel_id}")
+def delete_travel(travel_id: int, db: Session = Depends(get_db)):
+    travel = db.query(Travels).filter(Travels.id == travel_id).first()
+    if not travel:
+        raise HTTPException(status_code=404, detail="Viaje no encontrado")
+    
+    db.delete(travel)
+    db.commit()
+    return {"message": "Viaje eliminado"}
