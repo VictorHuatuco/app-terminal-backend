@@ -38,16 +38,10 @@ python -m venv venv
 ```
 Luego, actívalo según tu sistema operativo:
 
-Windows:
-
 ``` bash
-venv\Scripts\activate
+source venv/Scripts/activate
 ```
-macOS/Linux:
 
-``` bash
-source venv/bin/activate
-```
 ### 3️⃣ Instalar las dependencias del proyecto
 Una vez activado el entorno virtual, instala las dependencias con:
 
