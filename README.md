@@ -22,8 +22,9 @@ Sigue estos pasos para instalar y configurar el proyecto en tu entorno local.
 
 Abre una terminal y ejecuta el siguiente comando:
 
-bash
+``` bash
 git clone https://github.com/VictorHuatuco/app-terminal-backend.git
+```
 Luego, accede a la carpeta del proyecto:
 
 bash
