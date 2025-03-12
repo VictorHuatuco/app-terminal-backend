@@ -35,3 +35,6 @@ pip-delete-this-directory.txt
 
 # Ignorar videos
 videos/
+
+# Ignorar .env
+**/.env
