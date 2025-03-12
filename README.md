@@ -1,4 +1,3 @@
-﻿# app-terminal-backend
 🚍 App Terminal Backend
 Este proyecto es una API backend para la gestión de terminales de buses, desarrollada con FastAPI, PostgreSQL y SQLAlchemy.
 
