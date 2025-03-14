@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask_socketio import SocketIO
 import os
 import socket
-
+# comentario
 # Obtiene la IP local automáticamente
 hostname = socket.gethostname()
 local_ip = "192.168.18.219"
