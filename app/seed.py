@@ -3,6 +3,16 @@ from app.database import SessionLocal
 from app import models
 
 def seed_data(db: Session):
+    #Eliminar DAtos siu ya existe:
+    db.query(models.Announcements).delete()
+    db.query(models.Travels).delete()
+    db.query(models.Users).delete()
+    db.query(models.BoardingGates).delete()
+    db.query(models.Destinations).delete()
+    db.query(models.BusCompanies).delete()
+    db.query(models.Terminals).delete()
+    db.commit()
+    
     # Crear terminales
     terminal1 = models.Terminals(name="Terminal Central", city="Lima")
     terminal2 = models.Terminals(name="Terminal Norte", city="Trujillo")
