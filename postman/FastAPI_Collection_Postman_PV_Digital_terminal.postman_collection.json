@@ -23,19 +23,20 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/travels/:travel_id",
+									"raw": "{{base_url}}/travels/{{travel_id}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{base_url}}"
 									],
 									"path": [
 										"travels",
-										":travel_id"
+										"{{travel_id}}"
 									],
-									"variable": [
+									"query": [
 										{
-											"key": "travel_id",
-											"value": "<integer>",
-											"description": "(Required) "
+											"key": "1",
+											"value": "1",
+											"description": "1",
+											"disabled": true
 										}
 									]
 								}
@@ -134,20 +135,13 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/travels/:travel_id",
+									"raw": "{{base_url}}/travels/{{travel_id}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{base_url}}"
 									],
 									"path": [
 										"travels",
-										":travel_id"
-									],
-									"variable": [
-										{
-											"key": "travel_id",
-											"value": "<integer>",
-											"description": "(Required) "
-										}
+										"{{travel_id}}"
 									]
 								}
 							},
@@ -269,13 +263,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/travels/",
+									"raw": "{{base_url}}/travels",
 									"host": [
-										"{{baseUrl}}"
+										"{{base_url}}"
 									],
 									"path": [
-										"travels",
-										""
+										"travels"
 									]
 								}
 							},
@@ -317,13 +310,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/travels/",
+							"raw": "{{base_url}}/travels",
 							"host": [
-								"{{baseUrl}}"
+								"{{base_url}}"
 							],
 							"path": [
-								"travels",
-								""
+								"travels"
 							]
 						}
 					},
@@ -433,20 +425,13 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/announcements/:announcement_id",
+									"raw": "{{base_url}}/announcements/{{announcement_id}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{base_url}}"
 									],
 									"path": [
 										"announcements",
-										":announcement_id"
-									],
-									"variable": [
-										{
-											"key": "announcement_id",
-											"value": "<integer>",
-											"description": "(Required) "
-										}
+										"{{announcement_id}}"
 									]
 								}
 							},
@@ -557,20 +542,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/announcements/:announcement_id",
+									"raw": "{{base_url}}/announcements/{{announcement_id}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{base_url}}"
 									],
 									"path": [
 										"announcements",
-										":announcement_id"
-									],
-									"variable": [
-										{
-											"key": "announcement_id",
-											"value": "<integer>",
-											"description": "(Required) "
-										}
+										"{{announcement_id}}"
 									]
 								}
 							},
@@ -686,20 +664,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/announcements/:announcement_id",
+									"raw": "{{base_url}}/announcements",
 									"host": [
-										"{{baseUrl}}"
+										"{{base_url}}"
 									],
 									"path": [
-										"announcements",
-										":announcement_id"
-									],
-									"variable": [
-										{
-											"key": "announcement_id",
-											"value": "<integer>",
-											"description": "(Required) "
-										}
+										"announcements"
 									]
 								}
 							},
@@ -799,13 +769,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/announcements/",
+							"raw": "{{base_url}}/announcements/{{announcement_id}}",
 							"host": [
-								"{{baseUrl}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"announcements",
-								""
+								"{{announcement_id}}"
 							]
 						}
 					},
@@ -869,13 +839,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/announcements/",
+							"raw": "{{base_url}}/announcements",
 							"host": [
-								"{{baseUrl}}"
+								"{{base_url}}"
 							],
 							"path": [
-								"announcements",
-								""
+								"announcements"
 							]
 						}
 					},
@@ -982,13 +951,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/bus_companies/",
+							"raw": "{{base_url}}/bus_companies",
 							"host": [
-								"{{baseUrl}}"
+								"{{base_url}}"
 							],
 							"path": [
-								"bus_companies",
-								""
+								"bus_companies"
 							]
 						}
 					},
@@ -1052,13 +1020,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/bus_companies/",
+							"raw": "{{base_url}}/bus_companies",
 							"host": [
-								"{{baseUrl}}"
+								"{{base_url}}"
 							],
 							"path": [
-								"bus_companies",
-								""
+								"bus_companies"
 							]
 						}
 					},
@@ -1165,13 +1132,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/destinations/",
+							"raw": "{{base_url}}/destinations",
 							"host": [
-								"{{baseUrl}}"
+								"{{base_url}}"
 							],
 							"path": [
-								"destinations",
-								""
+								"destinations"
 							]
 						}
 					},
@@ -1235,13 +1201,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/destinations/",
+							"raw": "{{base_url}}/destinations",
 							"host": [
-								"{{baseUrl}}"
+								"{{base_url}}"
 							],
 							"path": [
-								"destinations",
-								""
+								"destinations"
 							]
 						}
 					},
@@ -1348,13 +1313,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/users/",
+							"raw": "{{base_url}}/users",
 							"host": [
-								"{{baseUrl}}"
+								"{{base_url}}"
 							],
 							"path": [
-								"users",
-								""
+								"users"
 							]
 						}
 					},
@@ -1410,7 +1374,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Juan\",\n  \"email\": \"juan@example.com\",\n  \"password\": \"123456\",\n  \"id_terminals\": 10\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1418,18 +1382,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/users/",
-							"protocol": "http",
+							"raw": "{{base_url}}/users",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"users",
-								""
+								"users"
 							]
 						}
 					},
