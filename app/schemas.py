@@ -112,6 +112,9 @@ class TravelCreate(TravelBase):
 
 class Travel(TravelBase):
     id: int
-
+    departure_time: time
+    plate: str
+    bus_company: BusCompany
+    destination: Destination
     class Config:
         orm_mode = True

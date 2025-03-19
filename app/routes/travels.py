@@ -1,21 +1,29 @@
 # app/routes/travels.py
 
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from app.database import get_db
 from app.models import Travels
-from app.schemas import TravelCreate
+from app.schemas import TravelCreate, Travel
 
 router = APIRouter(
     prefix="/travels",
     tags=["Travels"]
 )
 
-# Obtener todos los viajes
-@router.get("/")
+# Obtener todos los viajes con su destino y compañía de buses
+@router.get("/", response_model=list[Travel])
 def get_travels(db: Session = Depends(get_db)):
-    travels = db.query(Travels).all()
+    travels = (
+        db.query(Travels)
+        .options(
+            joinedload(Travels.destination),  # Carga datos del destino
+            joinedload(Travels.bus_company)  # Carga datos de la compañía de buses
+        )
+        .all()
+    )
     return travels
+
 
 # Obtener un viaje por ID
 @router.get("/{travel_id}")

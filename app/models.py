@@ -28,6 +28,9 @@ class Destinations(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     destination = Column(String)
 
+    travels_list = relationship("Travels", back_populates="destination")
+
+
 class BoardingGates(Base):
     __tablename__ = "boarding_gates"
 
@@ -58,3 +61,11 @@ class Travels(Base):
     id_destinations = Column(Integer, ForeignKey("destinations.id"))
     departure_time = Column(Time)
     plate = Column(String)
+
+    # Relaciones
+    bus_company = relationship("BusCompanies", backref="travels")
+    destination = relationship("Destinations", back_populates="travels_list")
+
+    # Relaciones
+    bus_company = relationship("BusCompanies", backref="travels")
+    destination = relationship("Destinations", back_populates="travels_list")
