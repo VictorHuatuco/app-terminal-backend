@@ -19,6 +19,19 @@ class Announcement(AnnouncementBase):
         orm_mode = True
 
 
+class BoardingGateBase(BaseModel):
+    boarding_gate: str
+
+class BoardingGateCreate(BoardingGateBase):
+    pass
+
+class BoardingGate(BoardingGateBase):
+    id: int
+
+    class Config:
+        orm_mode = True
+        
+
 class BusCompanyBase(BaseModel):
     bus_company: str
 

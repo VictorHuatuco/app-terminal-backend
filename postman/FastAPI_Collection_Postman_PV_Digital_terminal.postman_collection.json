@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "65978541-206a-47b8-bbad-51b0943e2c9a",
+		"_postman_id": "592756ca-e85b-4a76-bfa3-42dc1abf1dc6",
 		"name": "FastAPI_Collection_Postman_PV_Digital_terminal",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "42903088"
+		"_exporter_id": "38939373"
 	},
 	"item": [
 		{
@@ -23,20 +23,19 @@
 									}
 								],
 								"url": {
-									"raw": "{{base_url}}/travels/{{travel_id}}",
+									"raw": "{{baseUrl}}/travels/:travel_id",
 									"host": [
-										"{{base_url}}"
+										"{{baseUrl}}"
 									],
 									"path": [
 										"travels",
-										"{{travel_id}}"
+										":travel_id"
 									],
-									"query": [
+									"variable": [
 										{
-											"key": "1",
-											"value": "1",
-											"description": "1",
-											"disabled": true
+											"key": "travel_id",
+											"value": "<integer>",
+											"description": "(Required) "
 										}
 									]
 								}
@@ -135,13 +134,20 @@
 									}
 								],
 								"url": {
-									"raw": "{{base_url}}/travels/{{travel_id}}",
+									"raw": "{{baseUrl}}/travels/:travel_id",
 									"host": [
-										"{{base_url}}"
+										"{{baseUrl}}"
 									],
 									"path": [
 										"travels",
-										"{{travel_id}}"
+										":travel_id"
+									],
+									"variable": [
+										{
+											"key": "travel_id",
+											"value": "<integer>",
+											"description": "(Required) "
+										}
 									]
 								}
 							},
@@ -263,12 +269,13 @@
 									}
 								],
 								"url": {
-									"raw": "{{base_url}}/travels",
+									"raw": "{{baseUrl}}/travels/",
 									"host": [
-										"{{base_url}}"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"travels"
+										"travels",
+										""
 									]
 								}
 							},
@@ -310,12 +317,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/travels",
+							"raw": "{{baseUrl}}/travels/",
 							"host": [
-								"{{base_url}}"
+								"{{baseUrl}}"
 							],
 							"path": [
-								"travels"
+								"travels",
+								""
 							]
 						}
 					},
@@ -425,13 +433,20 @@
 									}
 								],
 								"url": {
-									"raw": "{{base_url}}/announcements/{{announcement_id}}",
+									"raw": "{{baseUrl}}/announcements/:announcement_id",
 									"host": [
-										"{{base_url}}"
+										"{{baseUrl}}"
 									],
 									"path": [
 										"announcements",
-										"{{announcement_id}}"
+										":announcement_id"
+									],
+									"variable": [
+										{
+											"key": "announcement_id",
+											"value": "<integer>",
+											"description": "(Required) "
+										}
 									]
 								}
 							},
@@ -542,13 +557,20 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/announcements/{{announcement_id}}",
+									"raw": "{{baseUrl}}/announcements/:announcement_id",
 									"host": [
-										"{{base_url}}"
+										"{{baseUrl}}"
 									],
 									"path": [
 										"announcements",
-										"{{announcement_id}}"
+										":announcement_id"
+									],
+									"variable": [
+										{
+											"key": "announcement_id",
+											"value": "<integer>",
+											"description": "(Required) "
+										}
 									]
 								}
 							},
@@ -664,12 +686,20 @@
 									}
 								],
 								"url": {
-									"raw": "{{base_url}}/announcements",
+									"raw": "{{baseUrl}}/announcements/:announcement_id",
 									"host": [
-										"{{base_url}}"
+										"{{baseUrl}}"
 									],
 									"path": [
-										"announcements"
+										"announcements",
+										":announcement_id"
+									],
+									"variable": [
+										{
+											"key": "announcement_id",
+											"value": "<integer>",
+											"description": "(Required) "
+										}
 									]
 								}
 							},
@@ -769,13 +799,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{base_url}}/announcements/{{announcement_id}}",
+							"raw": "{{baseUrl}}/announcements/",
 							"host": [
-								"{{base_url}}"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"announcements",
-								"{{announcement_id}}"
+								""
 							]
 						}
 					},
@@ -839,12 +869,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/announcements",
+							"raw": "{{baseUrl}}/announcements/",
 							"host": [
-								"{{base_url}}"
+								"{{baseUrl}}"
 							],
 							"path": [
-								"announcements"
+								"announcements",
+								""
 							]
 						}
 					},
@@ -951,12 +982,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{base_url}}/bus_companies",
+							"raw": "{{baseUrl}}/bus_companies/",
 							"host": [
-								"{{base_url}}"
+								"{{baseUrl}}"
 							],
 							"path": [
-								"bus_companies"
+								"bus_companies",
+								""
 							]
 						}
 					},
@@ -1020,12 +1052,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/bus_companies",
+							"raw": "{{baseUrl}}/bus_companies/",
 							"host": [
-								"{{base_url}}"
+								"{{baseUrl}}"
 							],
 							"path": [
-								"bus_companies"
+								"bus_companies",
+								""
 							]
 						}
 					},
@@ -1132,12 +1165,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{base_url}}/destinations",
+							"raw": "{{baseUrl}}/destinations/",
 							"host": [
-								"{{base_url}}"
+								"{{baseUrl}}"
 							],
 							"path": [
-								"destinations"
+								"destinations",
+								""
 							]
 						}
 					},
@@ -1201,12 +1235,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/destinations",
+							"raw": "{{baseUrl}}/destinations/",
 							"host": [
-								"{{base_url}}"
+								"{{baseUrl}}"
 							],
 							"path": [
-								"destinations"
+								"destinations",
+								""
 							]
 						}
 					},
@@ -1313,12 +1348,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{base_url}}/users",
+							"raw": "{{baseUrl}}/users/",
 							"host": [
-								"{{base_url}}"
+								"{{baseUrl}}"
 							],
 							"path": [
-								"users"
+								"users",
+								""
 							]
 						}
 					},
@@ -1374,7 +1410,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"id_terminals\": \"<integer>\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1382,12 +1418,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/users",
+							"raw": "{{baseUrl}}/users/",
 							"host": [
-								"{{base_url}}"
+								"{{baseUrl}}"
 							],
 							"path": [
-								"users"
+								"users",
+								""
 							]
 						}
 					},
@@ -1475,6 +1512,184 @@
 							],
 							"cookie": [],
 							"body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"msg\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"loc\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"msg\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "boarding_gates",
+			"item": [
+				{
+					"name": "List Boarding Gates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/boarding_gates/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"boarding_gates",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/boarding_gates/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"boarding_gates",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "[\r\n  {\r\n    \"boarding_gate\": \"<string>\",\r\n    \"id\": \"<integer>\"\r\n  },\r\n  {\r\n    \"boarding_gate\": \"<string>\",\r\n    \"id\": \"<integer>\"\r\n  }\r\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Boarding Gates",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"boarding_gate\": \"<string>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/boarding_gates/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"boarding_gates",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"bus_company\": \"<string>\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/boarding_gates/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"boarding_gates",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"destination\": \"<string>\",\n    \"id\": \"<integer>\"\n}"
+						},
+						{
+							"name": "Create Boarding Gates",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"boarding_gate\": \"<string>\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/boarding_gates/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"boarding_gates",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n  \"detail\": [\r\n    {\r\n      \"loc\": [\r\n        \"<string>\",\r\n        \"<string>\"\r\n      ],\r\n      \"msg\": \"<string>\",\r\n      \"type\": \"<string>\"\r\n    },\r\n    {\r\n      \"loc\": [\r\n        \"<string>\",\r\n        \"<string>\"\r\n      ],\r\n      \"msg\": \"<string>\",\r\n      \"type\": \"<string>\"\r\n    }\r\n  ]\r\n}"
 						}
 					]
 				}
