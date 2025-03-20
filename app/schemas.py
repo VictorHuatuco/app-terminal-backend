@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from datetime import date, time
+from typing import Literal
 
 # BusCompany Schema
 class BusCompanyBase(BaseModel):
@@ -64,7 +65,7 @@ class AnnouncementBase(BaseModel):
     id_boarding_gates: int
     id_users: int
     date_advertisement: date
-    status: bool
+    status: Literal["delayed", "canceled", "arrived"]
 
 class AnnouncementCreate(AnnouncementBase):
     pass

@@ -14,7 +14,7 @@ class Announcements(Base):
     id_boarding_gates = Column(Integer, ForeignKey("boarding_gates.id"))
     id_users = Column(Integer, ForeignKey("users.id"))
     date_advertisement = Column(Date)
-    status = Column(Boolean)
+    status = Column(String, nullable=False)
 
     # Relaciones
     travel = relationship("Travels", backref="announcements")

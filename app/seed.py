@@ -69,12 +69,12 @@ def seed_data(db: Session):
 
 
     # Crear anuncios
-    announcement1 = models.Announcements(id_travels=travel1.id, id_boarding_gates=gate1.id, id_users=user1.id, date_advertisement="2025-03-12", status=True)
-    announcement2 = models.Announcements(id_travels=travel2.id, id_boarding_gates=gate2.id, id_users=user2.id, date_advertisement="2025-03-12", status=False)
-    announcement3 = models.Announcements(id_travels=travel3.id, id_boarding_gates=gate3.id, id_users=user3.id, date_advertisement="2025-03-14", status=True)
-    announcement4 = models.Announcements(id_travels=travel4.id, id_boarding_gates=gate4.id, id_users=user4.id, date_advertisement="2025-03-14", status=False)
-    announcement5 = models.Announcements(id_travels=travel5.id, id_boarding_gates=gate5.id, id_users=user1.id, date_advertisement="2025-03-15", status=True)
-    announcement6 = models.Announcements(id_travels=travel6.id, id_boarding_gates=gate6.id, id_users=user2.id, date_advertisement="2025-03-16", status=True)
+    announcement1 = models.Announcements(id_travels=travel1.id, id_boarding_gates=gate1.id, id_users=user1.id, date_advertisement="2025-03-12", status="delayed")
+    announcement2 = models.Announcements(id_travels=travel2.id, id_boarding_gates=gate2.id, id_users=user2.id, date_advertisement="2025-03-12", status="canceled")
+    announcement3 = models.Announcements(id_travels=travel3.id, id_boarding_gates=gate3.id, id_users=user3.id, date_advertisement="2025-03-14", status="arrived")
+    announcement4 = models.Announcements(id_travels=travel4.id, id_boarding_gates=gate4.id, id_users=user4.id, date_advertisement="2025-03-14", status="delayed")
+    announcement5 = models.Announcements(id_travels=travel5.id, id_boarding_gates=gate5.id, id_users=user1.id, date_advertisement="2025-03-15", status="arrived")
+    announcement6 = models.Announcements(id_travels=travel6.id, id_boarding_gates=gate6.id, id_users=user2.id, date_advertisement="2025-03-16", status="canceled")
     db.add_all([announcement1, announcement2, announcement3, announcement4, announcement5, announcement6])
     db.commit()
 
