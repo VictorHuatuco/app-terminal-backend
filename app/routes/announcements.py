@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from app.database import get_db
 from app import models, schemas
+from app.schemas import TravelCreate, Travel, BoardingGate
 
 router = APIRouter(prefix="/announcements", tags=["Announcements"])
 
@@ -22,7 +23,16 @@ def get_announcement(announcement_id: int, db: Session = Depends(get_db)):
 
 @router.get("/", response_model=list[schemas.Announcement])
 def list_announcements(db: Session = Depends(get_db)):
-    return db.query(models.Announcements).all()
+    announcements = (
+        db.query(models.Announcements)
+        .options(
+            joinedload(models.Announcements.travel).joinedload(models.Travels.bus_company),
+            joinedload(models.Announcements.travel).joinedload(models.Travels.destination),
+            joinedload(models.Announcements.boarding_gate),
+        )
+        .all()
+    )
+    return announcements
 
 @router.put("/{announcement_id}", response_model=schemas.Announcement)
 def update_announcement(announcement_id: int, announcement: schemas.AnnouncementCreate, db: Session = Depends(get_db)):

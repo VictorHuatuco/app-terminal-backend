@@ -16,6 +16,10 @@ class Announcements(Base):
     date_advertisement = Column(Date)
     status = Column(Boolean)
 
+    # Relaciones
+    travel = relationship("Travels", backref="announcements")
+    boarding_gate = relationship("BoardingGates", backref="announcements")
+
 class BusCompanies(Base):
     __tablename__ = "bus_companies"
 
