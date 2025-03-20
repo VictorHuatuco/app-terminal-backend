@@ -489,7 +489,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_advertisement\": \"<date>\",\n  \"status\": \"<boolean>\",\n  \"id\": \"<integer>\"\n}"
+									"body": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_announcements\": \"<date>\",\n  \"status\": \"<boolean>\",\n  \"id\": \"<integer>\"\n}"
 								},
 								{
 									"name": "Validation Error",
@@ -549,7 +549,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_advertisement\": \"<date>\",\n  \"status\": \"<boolean>\"\n}",
+									"raw": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_announcements\": \"<date>\",\n  \"status\": \"<boolean>\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -587,7 +587,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_advertisement\": \"<date>\",\n  \"status\": \"<boolean>\"\n}",
+											"raw": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_announcements\": \"<date>\",\n  \"status\": \"<boolean>\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -622,7 +622,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_advertisement\": \"<date>\",\n  \"status\": \"<boolean>\",\n  \"id\": \"<integer>\"\n}"
+									"body": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_announcements\": \"<date>\",\n  \"status\": \"<boolean>\",\n  \"id\": \"<integer>\"\n}"
 								},
 								{
 									"name": "Validation Error",
@@ -636,7 +636,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_advertisement\": \"<date>\",\n  \"status\": \"<boolean>\"\n}",
+											"raw": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_announcements\": \"<date>\",\n  \"status\": \"<boolean>\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -841,7 +841,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"id_travels\": \"<integer>\",\n    \"id_boarding_gates\": \"<integer>\",\n    \"id_users\": \"<integer>\",\n    \"date_advertisement\": \"<date>\",\n    \"status\": \"<boolean>\",\n    \"id\": \"<integer>\"\n  },\n  {\n    \"id_travels\": \"<integer>\",\n    \"id_boarding_gates\": \"<integer>\",\n    \"id_users\": \"<integer>\",\n    \"date_advertisement\": \"<date>\",\n    \"status\": \"<boolean>\",\n    \"id\": \"<integer>\"\n  }\n]"
+							"body": "[\n  {\n    \"id_travels\": \"<integer>\",\n    \"id_boarding_gates\": \"<integer>\",\n    \"id_users\": \"<integer>\",\n    \"date_announcements\": \"<date>\",\n    \"status\": \"<boolean>\",\n    \"id\": \"<integer>\"\n  },\n  {\n    \"id_travels\": \"<integer>\",\n    \"id_boarding_gates\": \"<integer>\",\n    \"id_users\": \"<integer>\",\n    \"date_announcements\": \"<date>\",\n    \"status\": \"<boolean>\",\n    \"id\": \"<integer>\"\n  }\n]"
 						}
 					]
 				},
@@ -861,7 +861,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_advertisement\": \"<date>\",\n  \"status\": \"<boolean>\"\n}",
+							"raw": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_announcements\": \"<date>\",\n  \"status\": \"<boolean>\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -892,7 +892,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_advertisement\": \"<date>\",\n  \"status\": \"<boolean>\"\n}",
+									"raw": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_announcements\": \"<date>\",\n  \"status\": \"<boolean>\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -920,7 +920,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_advertisement\": \"<date>\",\n  \"status\": \"<boolean>\",\n  \"id\": \"<integer>\"\n}"
+							"body": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_announcements\": \"<date>\",\n  \"status\": \"<boolean>\",\n  \"id\": \"<integer>\"\n}"
 						},
 						{
 							"name": "Validation Error",
@@ -934,7 +934,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_advertisement\": \"<date>\",\n  \"status\": \"<boolean>\"\n}",
+									"raw": "{\n  \"id_travels\": \"<integer>\",\n  \"id_boarding_gates\": \"<integer>\",\n  \"id_users\": \"<integer>\",\n  \"date_announcements\": \"<date>\",\n  \"status\": \"<boolean>\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"

@@ -13,7 +13,7 @@ class Announcements(Base):
     id_travels = Column(Integer, ForeignKey("travels.id"))
     id_boarding_gates = Column(Integer, ForeignKey("boarding_gates.id"))
     id_users = Column(Integer, ForeignKey("users.id"))
-    date_advertisement = Column(Date)
+    date_announcements = Column(Date)
     status = Column(String, nullable=False)
 
     # Relaciones

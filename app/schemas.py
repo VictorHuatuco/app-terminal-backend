@@ -64,7 +64,7 @@ class AnnouncementBase(BaseModel):
     id_travels: int
     id_boarding_gates: int
     id_users: int
-    date_advertisement: date
+    date_announcements: date
     status: Literal["delayed", "canceled", "arrived"]
 
 class AnnouncementCreate(AnnouncementBase):
