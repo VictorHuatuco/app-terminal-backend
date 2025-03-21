@@ -45,6 +45,24 @@ def update_announcement(announcement_id: int, announcement: schemas.Announcement
     db.refresh(db_announcement)
     return db_announcement
 
+@router.patch("/{announcement_id}/status", response_model=schemas.Announcement)
+def update_announcement_status(
+    announcement_id: int, 
+    status: bool, 
+    db: Session = Depends(get_db)
+):
+    db_announcement = db.query(models.Announcements).filter(models.Announcements.id == announcement_id).first()
+    
+    if db_announcement is None:
+        raise HTTPException(status_code=404, detail="Announcement not found")
+    
+    db_announcement.status = status
+    db.commit()
+    db.refresh(db_announcement)
+    
+    return db_announcement
+
+
 @router.delete("/{announcement_id}")
 def delete_announcement(announcement_id: int, db: Session = Depends(get_db)):
     db_announcement = db.query(models.Announcements).filter(models.Announcements.id == announcement_id).first()
