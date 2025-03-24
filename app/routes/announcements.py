@@ -6,13 +6,13 @@ from app.schemas import TravelCreate, Travel, BoardingGate
 
 router = APIRouter(prefix="/announcements", tags=["Announcements"])
 
-@router.post("/", response_model=schemas.Announcement)
+@router.post("/")
 def create_announcement(announcement: schemas.AnnouncementCreate, db: Session = Depends(get_db)):
     db_announcement = models.Announcements(**announcement.dict())
     db.add(db_announcement)
     db.commit()
     db.refresh(db_announcement)
-    return db_announcement
+    return {"message": "success", "data": db_announcement}
 
 @router.get("/{announcement_id}", response_model=schemas.Announcement)
 def get_announcement(announcement_id: int, db: Session = Depends(get_db)):

@@ -47,7 +47,7 @@ def create_travel(travel_data: TravelCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(new_travel)
     
-    return {"message": "Viaje creado", "travel": new_travel}
+    return {"message": "success", "data": new_travel}
 
 # Eliminar un viaje
 @router.delete("/{travel_id}")
