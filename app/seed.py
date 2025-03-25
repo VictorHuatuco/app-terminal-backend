@@ -69,7 +69,7 @@ def seed_data(db: Session):
 
 
     # Crear anuncios
-    announcement1 = models.Announcements(id_travels=travel1.id, id_boarding_gates=gate1.id, id_users=user1.id, date_announcements="2025-03-12",status= True , observation="delayed")
+    announcement1 = models.Announcements(id_travels=travel1.id, id_boarding_gates=gate1.id, id_users=user1.id, date_announcements="2025-03-12",status= False , observation="delayed")
     announcement2 = models.Announcements(id_travels=travel2.id, id_boarding_gates= None, id_users=user2.id, date_announcements="2025-03-12",status= True , observation="canceled")
     announcement3 = models.Announcements(id_travels=travel3.id, id_boarding_gates=gate3.id, id_users=user3.id, date_announcements="2025-03-14",status= True , observation="arrived")
     announcement4 = models.Announcements(id_travels=travel4.id, id_boarding_gates=gate4.id, id_users=user4.id, date_announcements="2025-03-14",status= True , observation="delayed")

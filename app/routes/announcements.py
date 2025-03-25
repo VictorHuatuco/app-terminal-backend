@@ -25,6 +25,7 @@ def get_announcement(announcement_id: int, db: Session = Depends(get_db)):
 def list_announcements(db: Session = Depends(get_db)):
     announcements = (
         db.query(models.Announcements)
+        .filter(models.Announcements.status == True) 
         .options(
             joinedload(models.Announcements.travel).joinedload(models.Travels.bus_company),
             joinedload(models.Announcements.travel).joinedload(models.Travels.destination),
