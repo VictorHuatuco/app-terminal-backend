@@ -32,6 +32,7 @@ def list_announcements(db: Session = Depends(get_db)):
             joinedload(models.Announcements.travel).joinedload(models.Travels.destination),
             joinedload(models.Announcements.boarding_gate),
         )
+        .order_by(models.Announcements.id)
         .all()
     )
     return announcements
