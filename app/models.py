@@ -11,7 +11,7 @@ class Announcements(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     id_travels = Column(Integer, ForeignKey("travels.id"))
-    id_boarding_gates = Column(Integer, ForeignKey("boarding_gates.id"))
+    id_boarding_gates = Column(Integer, ForeignKey("boarding_gates.id"), nullable=True)
     id_users = Column(Integer, ForeignKey("users.id"))
     date_announcements = Column(Date)
     status = Column(Boolean)
@@ -19,7 +19,7 @@ class Announcements(Base):
 
     # Relaciones
     travel = relationship("Travels", backref="announcements")
-    boarding_gate = relationship("BoardingGates", backref="announcements")
+    boarding_gate = relationship("BoardingGates", backref="announcements", lazy="joined")
 
 class BusCompanies(Base):
     __tablename__ = "bus_companies"

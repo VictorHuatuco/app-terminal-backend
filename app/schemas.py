@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from datetime import date, time
-from typing import Literal
+from typing import Literal, Optional
 
 # BusCompany Schema
 class BusCompanyBase(BaseModel):
@@ -62,7 +62,7 @@ class Travel(TravelBase):
 # Announcement Schema
 class AnnouncementBase(BaseModel):
     id_travels: int
-    id_boarding_gates: int
+    id_boarding_gates: Optional[int]
     id_users: int
     date_announcements: date
     status: bool
@@ -74,7 +74,7 @@ class AnnouncementCreate(AnnouncementBase):
 class Announcement(AnnouncementBase):
     id: int
     travel: Travel
-    boarding_gate: BoardingGate  
+    boarding_gate: Optional[BoardingGate]  
 
     class Config:
         orm_mode = True
