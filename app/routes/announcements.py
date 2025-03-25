@@ -8,6 +8,7 @@ router = APIRouter(prefix="/announcements", tags=["Announcements"])
 
 @router.post("/")
 def create_announcement(announcement: schemas.AnnouncementCreate, db: Session = Depends(get_db)):
+    print("📩 Recibido:", announcement.dict())  # Verifica los datos recibidos
     db_announcement = models.Announcements(**announcement.dict())
     db.add(db_announcement)
     db.commit()

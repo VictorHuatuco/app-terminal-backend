@@ -1,6 +1,17 @@
 from sqlalchemy.orm import Session
+from sqlalchemy.sql import text
 from app.database import SessionLocal
 from app import models
+
+def reset_sequences(db: Session):
+    db.execute(text("ALTER SEQUENCE terminals_id_seq RESTART WITH 1;"))
+    db.execute(text("ALTER SEQUENCE bus_companies_id_seq RESTART WITH 1;"))
+    db.execute(text("ALTER SEQUENCE destinations_id_seq RESTART WITH 1;"))
+    db.execute(text("ALTER SEQUENCE boarding_gates_id_seq RESTART WITH 1;"))
+    db.execute(text("ALTER SEQUENCE users_id_seq RESTART WITH 1;"))
+    db.execute(text("ALTER SEQUENCE travels_id_seq RESTART WITH 1;"))
+    db.execute(text("ALTER SEQUENCE announcements_id_seq RESTART WITH 1;"))
+    db.commit()
 
 def seed_data(db: Session):
     #Eliminar DAtos siu ya existe:
@@ -12,6 +23,9 @@ def seed_data(db: Session):
     db.query(models.BusCompanies).delete()
     db.query(models.Terminals).delete()
     db.commit()
+
+    # Resetear secuencias para que los IDs vuelvan a 1
+    reset_sequences(db)
     
     # Crear terminales
     terminal1 = models.Terminals(name="Terminal Central", city="Lima")
