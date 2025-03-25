@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session, joinedload
 from app.database import get_db
 from app.models import Travels
-from app.schemas import TravelCreate, Travel
+from app.schemas import TravelCreate, Travel, TravelUpdate
 
 router = APIRouter(
     prefix="/travels",
@@ -48,6 +48,21 @@ def create_travel(travel_data: TravelCreate, db: Session = Depends(get_db)):
     db.refresh(new_travel)
     
     return {"message": "success", "data": new_travel}
+
+@router.put("/{travel_id}")
+def update_travel(travel_id: int, travel_data: TravelUpdate, db: Session = Depends(get_db)):
+    travel = db.query(Travels).filter(Travels.id == travel_id).first()
+    if not travel:
+        raise HTTPException(status_code=404, detail="Viaje no encontrado")
+
+    # ✅ Actualizar solo los campos enviados
+    update_data = travel_data.dict(exclude_unset=True)
+    for key, value in update_data.items():
+        setattr(travel, key, value)
+
+    db.commit()
+    db.refresh(travel)
+    return {"message": "success", "data": travel}
 
 # Eliminar un viaje
 @router.delete("/{travel_id}")
