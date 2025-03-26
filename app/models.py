@@ -14,6 +14,7 @@ class Announcements(Base):
     id_boarding_gates = Column(Integer, ForeignKey("boarding_gates.id"), nullable=True)
     id_users = Column(Integer, ForeignKey("users.id"))
     date_announcements = Column(Date)
+    date_advertisement = Column(Date) #Agregar una nueva columna en está clase
     status = Column(Boolean)
     observation = Column(String, nullable=False)
 
@@ -31,7 +32,7 @@ class Destinations(Base):
     __tablename__ = "destinations"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    destination = Column(String)
+    destination = Column(String)    
 
     travels_list = relationship("Travels", back_populates="destination")
 
@@ -64,8 +65,8 @@ class Travels(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     id_bus_companies = Column(Integer, ForeignKey("bus_companies.id"))
     id_destinations = Column(Integer, ForeignKey("destinations.id"))
-    departure_time = Column(Time)
-    plate = Column(String)
+    departure_time = Column(Time)   
+    bus_plate = Column(String) #de Plate  A bus_plate
 
     # Relaciones
     bus_company = relationship("BusCompanies", backref="travels")
