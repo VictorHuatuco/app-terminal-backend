@@ -4,10 +4,11 @@ from app.database import engine
 from app.models import Announcements, Travels
 from app.schemas import Announcement as AnnouncementSchema
 from fastapi import APIRouter
+from fastapi.encoders import jsonable_encoder
 import asyncio
 
-# Crear un servidor Socket.IO asíncrono
-sio = socketio.AsyncServer(async_mode="asgi", cors_allowed_origins=["http://localhost:4200"])
+# Configura Socket.IO para permitir el origen de tu frontend.
+sio = socketio.AsyncServer(async_mode="asgi", cors_allowed_origins="http://localhost:4200")
 sio_app = socketio.ASGIApp(sio)
 router = APIRouter()
 
@@ -35,7 +36,7 @@ async def broadcast_announcements():
             .order_by(Announcements.id)
             .all()
         )
-        data = [AnnouncementSchema.from_orm(ann).dict() for ann in announcements]
+        data = [jsonable_encoder(AnnouncementSchema.model_validate(ann)) for ann in announcements]
     finally:
         db.close()
     

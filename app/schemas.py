@@ -13,7 +13,7 @@ class BusCompany(BusCompanyBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # Destination Schema
 class DestinationBase(BaseModel):
@@ -26,7 +26,7 @@ class Destination(DestinationBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # BoardingGate Schema
 class BoardingGateBase(BaseModel):
@@ -39,7 +39,7 @@ class BoardingGate(BoardingGateBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # Travel Schema (Se define antes de Announcement)
 class TravelBase(BaseModel):
@@ -63,7 +63,7 @@ class Travel(TravelBase):
     destination: Destination  # Relación con Destination
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # Announcement Schema
 class AnnouncementBase(BaseModel):
@@ -83,7 +83,7 @@ class Announcement(AnnouncementBase):
     boarding_gate: Optional[BoardingGate]  
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # User Schema
 class UserBase(BaseModel):
@@ -99,7 +99,7 @@ class User(UserBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # Terminal Schema
 class TerminalBase(BaseModel):
@@ -113,4 +113,4 @@ class Terminal(TerminalBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True

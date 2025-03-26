@@ -3,6 +3,10 @@ from sqlalchemy.orm import Session, joinedload
 from app.database import get_db
 from app import models, schemas
 from app.schemas import TravelCreate, Travel, BoardingGate
+import asyncio
+
+# Importa la función de broadcast desde el módulo de Socket.IO
+from app.routers import socketio_announcements
 
 router = APIRouter(prefix="/announcements", tags=["Announcements"])
 
@@ -13,6 +17,14 @@ def create_announcement(announcement: schemas.AnnouncementCreate, db: Session = 
     db.add(db_announcement)
     db.commit()
     db.refresh(db_announcement)
+
+     # Dispara la emisión en segundo plano
+    try:
+        asyncio.get_running_loop().create_task(socketio_announcements.broadcast_announcements())
+    except RuntimeError:
+        # En caso de no haber event loop activo (poco probable con Uvicorn)
+        asyncio.run(socketio_announcements.broadcast_announcements())
+    
     return {"message": "success", "data": db_announcement}
 
 @router.get("/{announcement_id}", response_model=schemas.Announcement)
@@ -46,6 +58,13 @@ def update_announcement(announcement_id: int, announcement: schemas.Announcement
         setattr(db_announcement, key, value)
     db.commit()
     db.refresh(db_announcement)
+
+     # Dispara la emisión en segundo plano
+    try:
+        asyncio.get_running_loop().create_task(socketio_announcements.broadcast_announcements())
+    except RuntimeError:
+        asyncio.run(socketio_announcements.broadcast_announcements())
+
     return db_announcement
 
 @router.patch("/{announcement_id}/status", response_model=schemas.Announcement)
@@ -62,6 +81,12 @@ def update_announcement_status(
     db_announcement.status = status
     db.commit()
     db.refresh(db_announcement)
+
+    # Dispara la emisión en segundo plano
+    try:
+        asyncio.get_running_loop().create_task(socketio_announcements.broadcast_announcements())
+    except RuntimeError:
+        asyncio.run(socketio_announcements.broadcast_announcements())
     
     return db_announcement
 
