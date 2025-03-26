@@ -7,7 +7,7 @@ from fastapi import APIRouter
 import asyncio
 
 # Crear un servidor Socket.IO asíncrono
-sio = socketio.AsyncServer(async_mode="asgi")
+sio = socketio.AsyncServer(async_mode="asgi", cors_allowed_origins=["http://localhost:4200"])
 sio_app = socketio.ASGIApp(sio)
 router = APIRouter()
 
