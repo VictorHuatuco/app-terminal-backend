@@ -74,3 +74,13 @@ class Travels(Base):
     # Relaciones
     bus_company = relationship("BusCompanies", backref="travels")
     destination = relationship("Destinations", back_populates="travels_list")
+
+
+class Videos(Base):
+    __tablename__ = "videos"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    filename = Column(String, nullable=False)
+    title = Column(String, nullable=True)
+    description = Column(String, nullable=True)
+    order = Column(Integer, nullable=False)

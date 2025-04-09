@@ -114,3 +114,18 @@ class Terminal(TerminalBase):
 
     class Config:
         from_attributes = True
+
+class VideoBase(BaseModel):
+    filename: str
+    title: Optional[str] = None
+    description: Optional[str] = None
+    order: int
+
+class VideoCreate(VideoBase):
+    pass
+
+class Video(VideoBase):
+    id: int
+
+    class Config:
+        from_attributes = True
