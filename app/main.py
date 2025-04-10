@@ -2,6 +2,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from app.utils.init_videos import init_video_db
 from app.database import engine, Base
 from app.routers import (
     announcements, 
@@ -48,3 +49,7 @@ def root():
 
 # Crear las tablas (si no existen)
 Base.metadata.create_all(bind=engine)
+
+@app.on_event("startup")
+def startup_event():
+    init_video_db()

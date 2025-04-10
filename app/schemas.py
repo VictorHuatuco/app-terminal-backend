@@ -115,10 +115,11 @@ class Terminal(TerminalBase):
     class Config:
         from_attributes = True
 
+# Schema para Video existente
 class VideoBase(BaseModel):
     filename: str
-    title: Optional[str] = None
-    description: Optional[str] = None
+    title: Optional[str]
+    description: Optional[str]
     order: int
 
 class VideoCreate(VideoBase):
@@ -128,4 +129,9 @@ class Video(VideoBase):
     id: int
 
     class Config:
-        from_attributes = True
+        orm_mode = True
+
+# Schema para actualizar el orden de un video
+class VideoOrderUpdate(BaseModel):
+    id: int
+    order: int
