@@ -46,7 +46,7 @@ class TravelBase(BaseModel):
     id_bus_companies: int
     id_destinations: int
     departure_time: time
-    plate: str
+    bus_plate: str
 
 class TravelCreate(TravelBase):
     pass
@@ -55,7 +55,7 @@ class TravelUpdate(BaseModel):
     id_bus_companies: Optional[int] = None
     id_destinations: Optional[int] = None
     departure_time: Optional[time] = None
-    plate: Optional[str] = None
+    bus_plate: Optional[str] = None
 
 class Travel(TravelBase):
     id: int

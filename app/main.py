@@ -41,7 +41,7 @@ app.mount("/ws/announcements", socketio_announcements.sio_app)
 app.mount("/ws/videos", socketio_videos.sio_app)
 
 # Servir archivos estáticos desde "app/public"
-app.mount("/public", StaticFiles(directory="app/public"), name="public")
+#app.mount("/public", StaticFiles(directory="app/public"), name="public")
 
 @app.get("/")
 def root():

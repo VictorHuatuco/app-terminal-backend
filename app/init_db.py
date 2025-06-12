@@ -63,7 +63,7 @@ finally:
     cursor.close()
     conn.close()
 
-# Conectarse a la nueva base de datos
+# Conectarse a la base de datos
 try:
     conn = psycopg2.connect(
         dbname=app_db_name,
@@ -80,7 +80,7 @@ try:
         f"ALTER SCHEMA public OWNER TO {app_db_user};",
         f"ALTER DATABASE {app_db_name} OWNER TO {app_db_user};",
     ]
-
+    
     for command in commands_schema:
         cursor.execute(command)
 
@@ -89,7 +89,7 @@ try:
 
 except Exception as e:
     print(f"❌ Error en la configuración final de la base de datos: {e}")
-
+    
 finally:
     cursor.close()
     conn.close()

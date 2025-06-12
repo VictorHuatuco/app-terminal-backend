@@ -29,22 +29,22 @@ class BusCompanies(Base):
 
 class Destinations(Base):
     __tablename__ = "destinations"
-
+    
     id = Column(Integer, primary_key=True, autoincrement=True)
     destination = Column(String)
-
+    
     travels_list = relationship("Travels", back_populates="destination")
 
 
 class BoardingGates(Base):
     __tablename__ = "boarding_gates"
-
+    
     id = Column(Integer, primary_key=True, autoincrement=True)
     boarding_gate = Column(String)
-
+    
 class Users(Base):
     __tablename__ = "users"
-
+    
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String)
     email = Column(String)
@@ -65,7 +65,7 @@ class Travels(Base):
     id_bus_companies = Column(Integer, ForeignKey("bus_companies.id"))
     id_destinations = Column(Integer, ForeignKey("destinations.id"))
     departure_time = Column(Time)
-    plate = Column(String)
+    bus_plate = Column(String)
 
     # Relaciones
     bus_company = relationship("BusCompanies", backref="travels")
@@ -74,13 +74,13 @@ class Travels(Base):
     # Relaciones
     bus_company = relationship("BusCompanies", backref="travels")
     destination = relationship("Destinations", back_populates="travels_list")
-
-
+    
 class Videos(Base):
     __tablename__ = "videos"
-
+    
     id = Column(Integer, primary_key=True, autoincrement=True)
     filename = Column(String, nullable=False)
     title = Column(String, nullable=True)
     description = Column(String, nullable=True)
     order = Column(Integer, nullable=False)
+    
