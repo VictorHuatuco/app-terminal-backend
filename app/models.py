@@ -4,8 +4,6 @@ from sqlalchemy import Column, Integer, String, Boolean, Date, Time, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
-Base = declarative_base()
-
 class Announcements(Base):
     __tablename__ = "announcements"
 
@@ -14,7 +12,7 @@ class Announcements(Base):
     id_boarding_gates = Column(Integer, ForeignKey("boarding_gates.id"), nullable=True)
     id_users = Column(Integer, ForeignKey("users.id"))
     date_announcements = Column(Date)
-    date_advertisement = Column(Date) #Agregar una nueva columna en está clase
+    date_advertisement = Column(Date)  # Agregar una nueva columna en está clase
     status = Column(Boolean)
     observation = Column(String, nullable=False)
 
@@ -30,22 +28,20 @@ class BusCompanies(Base):
 
 class Destinations(Base):
     __tablename__ = "destinations"
-
+    
     id = Column(Integer, primary_key=True, autoincrement=True)
     destination = Column(String)    
-
     travels_list = relationship("Travels", back_populates="destination")
-
 
 class BoardingGates(Base):
     __tablename__ = "boarding_gates"
-
+    
     id = Column(Integer, primary_key=True, autoincrement=True)
     boarding_gate = Column(String)
 
 class Users(Base):
     __tablename__ = "users"
-
+    
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String)
     email = Column(String)
@@ -65,13 +61,18 @@ class Travels(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     id_bus_companies = Column(Integer, ForeignKey("bus_companies.id"))
     id_destinations = Column(Integer, ForeignKey("destinations.id"))
-    departure_time = Column(Time)   
-    bus_plate = Column(String) #de Plate  A bus_plate
+    departure_time = Column(Time)
+    bus_plate = Column(String)  # de Plate A bus_plate
 
     # Relaciones
     bus_company = relationship("BusCompanies", backref="travels")
     destination = relationship("Destinations", back_populates="travels_list")
 
-    # Relaciones
-    bus_company = relationship("BusCompanies", backref="travels")
-    destination = relationship("Destinations", back_populates="travels_list")
+class Videos(Base):
+    __tablename__ = "videos"
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    filename = Column(String, nullable=False)
+    title = Column(String, nullable=True)
+    description = Column(String, nullable=True)
+    order = Column(Integer, nullable=False)

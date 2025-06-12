@@ -1,8 +1,20 @@
+#app/main.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from app.utils.init_videos import init_video_db
 from app.database import engine, Base
-from app.routers import announcements, boarding_gates, bus_companies, destinations, travels, users, socketio_announcements
-
+from app.routers import (
+    announcements, 
+    boarding_gates, 
+    bus_companies, 
+    destinations, 
+    travels, 
+    users, 
+    socketio_announcements,
+    videos, 
+    socketio_videos
+)
 app = FastAPI()
 
 app.add_middleware(
@@ -21,9 +33,15 @@ app.include_router(destinations.router)
 app.include_router(travels.router)
 app.include_router(users.router)
 app.include_router(socketio_announcements.router)
+app.include_router(videos.router)
+app.include_router(socketio_videos.router)
 
 # Montar la aplicación Socket.IO
-app.mount("/socket.io", socketio_announcements.sio_app)
+app.mount("/ws/announcements", socketio_announcements.sio_app)
+app.mount("/ws/videos", socketio_videos.sio_app)
+
+# Servir archivos estáticos desde "app/public"
+#app.mount("/public", StaticFiles(directory="app/public"), name="public")
 
 @app.get("/")
 def root():
@@ -31,3 +49,7 @@ def root():
 
 # Crear las tablas (si no existen)
 Base.metadata.create_all(bind=engine)
+
+@app.on_event("startup")
+def startup_event():
+    init_video_db()

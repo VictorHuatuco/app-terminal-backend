@@ -14,7 +14,7 @@ def reset_sequences(db: Session):
     db.commit()
 
 def seed_data(db: Session):
-    #Eliminar DAtos siu ya existe:
+    #Eliminar DAtos si ya existe:
     db.query(models.Announcements).delete()
     db.query(models.Travels).delete()
     db.query(models.Users).delete()
@@ -72,23 +72,23 @@ def seed_data(db: Session):
     db.commit()
 
     # Crear viajes
-    travel1 = models.Travels(id_bus_companies=bus_company1.id, id_destinations=destination1.id, departure_time="08:30:00", plate="ABC-123")
-    travel2 = models.Travels(id_bus_companies=bus_company2.id, id_destinations=destination2.id, departure_time="14:15:00", plate="XYZ-789")
-    travel3 = models.Travels(id_bus_companies=bus_company3.id, id_destinations=destination3.id, departure_time="10:15:00", plate="IBZ-243")
-    travel4 = models.Travels(id_bus_companies=bus_company4.id, id_destinations=destination4.id, departure_time="16:15:00", plate="ABC-123")
-    travel5 = models.Travels(id_bus_companies=bus_company5.id, id_destinations=destination5.id, departure_time="09:45:00", plate="DEF-456")
-    travel6 = models.Travels(id_bus_companies=bus_company6.id, id_destinations=destination6.id, departure_time="18:00:00", plate="GHI-789")
+    travel1 = models.Travels(id_bus_companies=bus_company1.id, id_destinations=destination1.id, departure_time="08:30:00", bus_plate="ABC-123")
+    travel2 = models.Travels(id_bus_companies=bus_company2.id, id_destinations=destination2.id, departure_time="14:15:00", bus_plate="XYZ-789")
+    travel3 = models.Travels(id_bus_companies=bus_company3.id, id_destinations=destination3.id, departure_time="10:15:00", bus_plate="IBZ-243")
+    travel4 = models.Travels(id_bus_companies=bus_company4.id, id_destinations=destination4.id, departure_time="16:15:00", bus_plate="ABC-123")
+    travel5 = models.Travels(id_bus_companies=bus_company5.id, id_destinations=destination5.id, departure_time="09:45:00", bus_plate="DEF-456")
+    travel6 = models.Travels(id_bus_companies=bus_company6.id, id_destinations=destination6.id, departure_time="18:00:00", bus_plate="GHI-789")
     db.add_all([travel1, travel2, travel3, travel4, travel5, travel6])
     db.commit()
 
 
     # Crear anuncios
-    announcement1 = models.Announcements(id_travels=travel1.id, id_boarding_gates=gate1.id, id_users=user1.id, date_announcements="2025-03-12",status= False , observation="delayed")
-    announcement2 = models.Announcements(id_travels=travel2.id, id_boarding_gates= None, id_users=user2.id, date_announcements="2025-03-12",status= True , observation="canceled")
-    announcement3 = models.Announcements(id_travels=travel3.id, id_boarding_gates=gate3.id, id_users=user3.id, date_announcements="2025-03-14",status= True , observation="arrived")
-    announcement4 = models.Announcements(id_travels=travel4.id, id_boarding_gates=gate4.id, id_users=user4.id, date_announcements="2025-03-14",status= True , observation="delayed")
-    announcement5 = models.Announcements(id_travels=travel5.id, id_boarding_gates=gate5.id, id_users=user1.id, date_announcements="2025-03-15",status= True , observation="arrived")
-    announcement6 = models.Announcements(id_travels=travel6.id, id_boarding_gates= None, id_users=user2.id, date_announcements="2025-03-16",status= True , observation="canceled")
+    announcement1 = models.Announcements(id_travels=travel1.id, id_boarding_gates=gate1.id, id_users=user1.id, date_announcements="2025-09-12",status= False , observation="delayed")
+    announcement2 = models.Announcements(id_travels=travel2.id, id_boarding_gates= None, id_users=user2.id, date_announcements="2025-09-12",status= True , observation="canceled")
+    announcement3 = models.Announcements(id_travels=travel3.id, id_boarding_gates=gate3.id, id_users=user3.id, date_announcements="2025-09-14",status= True , observation="arrived")
+    announcement4 = models.Announcements(id_travels=travel4.id, id_boarding_gates=gate4.id, id_users=user4.id, date_announcements="2025-09-14",status= True , observation="delayed")
+    announcement5 = models.Announcements(id_travels=travel5.id, id_boarding_gates=gate5.id, id_users=user1.id, date_announcements="2025-09-15",status= True , observation="arrived")
+    announcement6 = models.Announcements(id_travels=travel6.id, id_boarding_gates= None, id_users=user2.id, date_announcements="2025-09-16",status= True , observation="canceled")
     db.add_all([announcement1, announcement2, announcement3, announcement4, announcement5, announcement6])
     db.commit()
 

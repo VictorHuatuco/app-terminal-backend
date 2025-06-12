@@ -46,7 +46,7 @@ class TravelBase(BaseModel):
     id_bus_companies: int
     id_destinations: int
     departure_time: time
-    plate: str
+    bus_plate: str
 
 class TravelCreate(TravelBase):
     pass
@@ -55,7 +55,7 @@ class TravelUpdate(BaseModel):
     id_bus_companies: Optional[int] = None
     id_destinations: Optional[int] = None
     departure_time: Optional[time] = None
-    plate: Optional[str] = None
+    bus_plate: Optional[str] = None
 
 class Travel(TravelBase):
     id: int
@@ -114,3 +114,24 @@ class Terminal(TerminalBase):
 
     class Config:
         from_attributes = True
+
+# Schema para Video existente
+class VideoBase(BaseModel):
+    filename: str
+    title: Optional[str]
+    description: Optional[str]
+    order: int
+
+class VideoCreate(VideoBase):
+    pass
+
+class Video(VideoBase):
+    id: int
+
+    class Config:
+        orm_mode = True
+
+# Schema para actualizar el orden de un video
+class VideoOrderUpdate(BaseModel):
+    id: int
+    order: int

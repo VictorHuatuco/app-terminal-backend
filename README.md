@@ -39,11 +39,11 @@ python -m venv venv
 Luego, actívalo según tu sistema operativo:
 
 ``` bash
-source venv/Scripts/activate
+venv/Scripts/activate
 ```
 
 ### 3️⃣ Instalar las dependencias del proyecto
-Una vez activado el entorno virtual, instala las dependencias con:
+Una vez activado el entorno virtual, instala las dependencias con: (No es valido instalar antes fuera del entorno virtual)
 
 ``` bash
 pip install -r requirements.txt
@@ -84,7 +84,7 @@ python -m app.init_db
 ```bash
 python -m app.database
 ```
-### 8️⃣ Insertar datos iniciales (seeds)
+### 8️⃣ Insertar datos iniciales (seeds-semillas)
 ```bash
 python -m app.seed
 ```
